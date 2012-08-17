@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>serusufojinoapex</title>
+  <link href="/stylesheets/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/bootstrap-responsive.min.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/custom.css?<%= Time.now.to_i %>" media="screen" rel="stylesheet" type="text/css" />
+  <script charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+  <script charset="utf-8" src="/javascripts/jquery-ujs.js" type="text/javascript"></script>
+  <script charset="utf-8" src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
+  <script charset="utf-8" src="/javascripts/application.js?<%= Time.now.to_i %>" type="text/javascript"></script>
+</head>
+<body>
+  <div class="container" id="main">
+    <header><h1><a href="/">serusufojinoapex</a></h1></header>
+    <article>
+      <%= styled_flash %>
+      <%= yield %>
+    </article>
+    <footer>&copy; 2012 serusufojinoapex</footer>
+  </div>
+</body>
+</html>

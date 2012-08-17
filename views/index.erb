@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="span8 offset2">
+    <% if @accounts && !@accounts.empty? %>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Website</th>
+            <th colspan="2">&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @accounts.each do |account| %>
+            <tr>
+              <td><%= h account.name %></td>
+              <td><%= h account.phone %></td>
+              <td><%= h account.website %></td>
+              <td><a href="/accounts/<%= account.id %>/edit" class="btn" rel="nofollow">Edit</a></td>
+              <td><form method="post" action="/accounts/<%= account.id %>"><input type="submit" value="Delete" class="btn btn-danger" /><input name="_method" type="hidden" value="delete" /><%= csrf_tag %></form></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <p>No one account found.</p>
+    <% end %>
+    <p><a href="/accounts/new">Create New Account</a></p>
+  </div>
+</div>

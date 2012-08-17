@@ -1,0 +1,45 @@
+== About
+
+Sample Salesforge Apex resource consumer.
+
+
+== Installation
+
+Sign into developer's account at http://developer.force.com/
+
+Create new application (App Setup/Create/Apps/New).
+Fill application's credentials in file config/omniauth.yml
+
+Create account resource (App Setup/Develop/Apex Classes/New).
+The source code may be found in file sample/AccountResource.cls
+
+In order to install required gems inside application's root execute:
+  bundle
+
+Create PosgreSQL user and database and define environment variable:
+  setenv DATABASE_URL "postgres://user:password@host/database"
+In Bourne shell command should be:
+  export DATABASE_URL="postgres://user:password@host/database"
+
+Start console:
+  irb -r ./config/boot.rb
+
+Inside console add your OpenAuth credentials:
+  SfUser.insert 'uid' => '...', 'instance_url' => '...',
+                'token' => '...', 'refresh_token' => '...'
+
+
+== Demo
+
+This sample should be accessible at http://serusufojinoapex.herokuapp.com/
+
+
+== Author
+
+Iwakura Taro, taro@mail333.com
+
+
+== License
+
+See the License file for details.
+

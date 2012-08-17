@@ -1,0 +1,25 @@
+<div class="row">
+<div class="span4 offset4" id="stats">
+  <form method="post" action="<%= @account.new_record? ? '/accounts' : "/accounts/#{@account.id}" %>">
+    <% unless @account.new_record? %>
+      <input name="_method" type="hidden" value="put" />
+    <% end %>
+    <%= csrf_tag %>
+    <p>
+      <label for="account_name">Name</label>
+      <input type="text" id="account_name" name="account[name]" value="<%= h @account.name %>">
+    </p>
+    <p>
+      <label for="account_phone">Phone</label>
+      <input type="text" id="account_phone" name="account[phone]" value="<%= h @account.phone %>">
+    </p>
+    <p>
+      <label for="account_website">Website</label>
+      <input type="text" id="account_website" name="account[website]" value="<%= h @account.website %>">
+    </p>
+    <p>
+    <input type="submit" class="btn btn-success" value="Save" /> <a href="/">Cancel</a>
+    </p>
+  </form>
+</div>
+</div>
